@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mente em Equilíbrio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-logo">
+      <span class="logo-icon">🩵</span>
+      <span class="logo-text">Sua Saúde Mental</span>
+    </div>
+    <div class="nav-links">
+      <button class="nav-btn active" onclick="mostrarAba(0)" data-index="0">Início</button>
+      <button class="nav-btn" onclick="mostrarAba(1)" data-index="1">Mitos & Fatos</button>
+      <button class="nav-btn" onclick="mostrarAba(2)" data-index="2">Autoajuda</button>
+      <button class="nav-btn" onclick="mostrarAba(3)" data-index="3">Suporte</button>
+      <button class="nav-btn" onclick="mostrarAba(4)" data-index="4">Teste</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <button onclick="mostrarAba(0);toggleMenu()" data-index="0">Início</button>
+    <button onclick="mostrarAba(1);toggleMenu()" data-index="1">Mitos & Fatos</button>
+    <button onclick="mostrarAba(2);toggleMenu()" data-index="2">Autoajuda</button>
+    <button onclick="mostrarAba(3);toggleMenu()" data-index="3">Suporte</button>
+    <button onclick="mostrarAba(4);toggleMenu()" data-index="4">Teste</button>
+  </div>
+
+  <main class="main-content">
+
+    <div class="conteudo-aba active" id="conteudo-0">
+      <section class="hero">
+        <div class="hero-badge">Saúde Mental</div>
+        <h1 class="hero-title">Cuidar da mente<br><em>é cuidar da vida.</em></h1>
+        <p class="hero-sub">Um espaço acolhedor para entender, refletir e agir sobre seu bem-estar emocional.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="mostrarAba(4)">Fazer o teste →</button>
+          <button class="btn-ghost" onclick="mostrarAba(2)">Como me cuidar</button>
+        </div>
+      </section>
+
+      <section class="cards-grid">
+        <div class="info-card card-blue">
+          <div class="card-icon">💭</div>
+          <h3>O que é saúde mental?</h3>
+          <p>Saúde mental é o equilíbrio que nos permite lidar com emoções, enfrentar desafios, tomar decisões e construir relações saudáveis. Ela envolve como pensamos, sentimos e agimos no dia a dia — vai muito além da ausência de doenças.</p>
+        </div>
+        <div class="info-card card-green">
+          <div class="card-icon">🌿</div>
+          <h3>Por que cuidar?</h3>
+          <p>Quando negligenciada, a saúde mental afeta trabalho, estudos e relacionamentos. Hábitos como exercícios, sono adequado, alimentação equilibrada e apoio social são fundamentais para proteger seu bem-estar emocional.</p>
+        </div>
+        <div class="info-card card-rose">
+          <div class="card-icon">🔍</div>
+          <h3>Reconhecendo sinais</h3>
+          <p>Tristeza excessiva, dificuldade de concentração, irritabilidade ou isolamento podem ser sinais de alerta. Mudanças no apetite, sono e energia também merecem atenção. Reconhecer esses sinais é o primeiro passo.</p>
+        </div>
+        <div class="info-card card-amber">
+          <div class="card-icon">⚡</div>
+          <h3>Mente e corpo unidos</h3>
+          <p>A conexão entre mente e corpo é real. Estresse emocional pode causar dores físicas, insônia e palpitações. Pessoas com boa saúde mental se recuperam mais rápido de doenças e vivem com mais qualidade.</p>
+        </div>
+      </section>
+
+      <section class="stats-bar">
+        <div class="stat">
+          <span class="stat-num">1 em 4</span>
+          <span class="stat-label">pessoas enfrenta algum transtorno mental na vida</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">800 mil</span>
+          <span class="stat-label">mortes anuais relacionadas à depressão não tratada</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">75%</span>
+          <span class="stat-label">dos transtornos mentais começam antes dos 24 anos</span>
+        </div>
+      </section>
+    </div>
+
+    <div class="conteudo-aba" id="conteudo-1">
+      <div class="page-header">
+        <h2 class="page-title">Mitos & <em>Fatos</em></h2>
+        <p class="page-desc">A saúde mental ainda carrega muito estigma. Conhecer a verdade é o primeiro passo para combatê-lo.</p>
+      </div>
+
+      <div class="myths-grid">
+        <div class="myth-card">
+          <div class="myth-label">❌ Mito</div>
+          <p class="myth-text">"Quem vai ao psiquiatra é louco."</p>
+          <div class="fact-label">✅ Fato</div>
+          <p class="fact-text">Muitas pessoas buscam ajuda para ansiedade, depressão e estresse — condições comuns e tratáveis. Ir ao psiquiatra é um ato de autocuidado.</p>
+        </div>
+
+        <div class="myth-card">
+          <div class="myth-label">❌ Mito</div>
+          <p class="myth-text">"Pessoas com doenças mentais são perigosas."</p>
+          <div class="fact-label">✅ Fato</div>
+          <p class="fact-text">A esmagadora maioria das pessoas com transtornos mentais não é violenta. Este estigma não tem base na realidade e causa muito dano.</p>
+        </div>
+
+        <div class="myth-card">
+          <div class="myth-label">❌ Mito</div>
+          <p class="myth-text">"Depressão é só tristeza e passa sozinha."</p>
+          <div class="fact-label">✅ Fato</div>
+          <p class="fact-text">A depressão é uma condição médica séria que afeta toda a vida de uma pessoa. Ela requer tratamento adequado e não desaparece sem ajuda.</p>
+        </div>
+
+        <div class="myth-card">
+          <div class="myth-label">❌ Mito</div>
+          <p class="myth-text">"Terapia é para quem é fraco."</p>
+          <div class="fact-label">✅ Fato</div>
+          <p class="fact-text">Buscar terapia é um sinal de força e autocuidado. Todos podem se beneficiar, seja para lidar com dificuldades ou para crescer pessoalmente.</p>
+        </div>
+
+        <div class="myth-card">
+          <div class="myth-label">❌ Mito</div>
+          <p class="myth-text">"Se tiver uma vida boa, não há problemas mentais."</p>
+          <div class="fact-label">✅ Fato</div>
+          <p class="fact-text">Saúde mental não depende apenas de fatores externos. Genética, histórico e bioquímica cerebral influenciam — independente das condições de vida.</p>
+        </div>
+
+        <div class="myth-card">
+          <div class="myth-label">❌ Mito</div>
+          <p class="myth-text">"Quem tem transtorno mental não pode ter vida normal."</p>
+          <div class="fact-label">✅ Fato</div>
+          <p class="fact-text">Com tratamento adequado, muitas pessoas com transtornos mentais vivem plenamente, com relacionamentos saudáveis e carreiras bem-sucedidas.</p>
+        </div>
+
+        <div class="myth-card">
+          <div class="myth-label">❌ Mito</div>
+          <p class="myth-text">"Criança não tem problema de saúde mental."</p>
+          <div class="fact-label">✅ Fato</div>
+          <p class="fact-text">Crianças e adolescentes também enfrentam ansiedade, depressão e outros transtornos. O diagnóstico precoce é fundamental para o tratamento.</p>
+        </div>
+
+        <div class="myth-card">
+          <div class="myth-label">❌ Mito</div>
+          <p class="myth-text">"Remédios psiquiátricos são todos viciantes."</p>
+          <div class="fact-label">✅ Fato</div>
+          <p class="fact-text">A maioria dos medicamentos psiquiátricos não causa dependência. Usados com supervisão médica, são ferramentas seguras e eficazes de tratamento.</p>
+        </div>
+
+        <div class="myth-card">
+          <div class="myth-label">❌ Mito</div>
+          <p class="myth-text">"Saúde mental é coisa de adulto — jovem não precisa se preocupar."</p>
+          <div class="fact-label">✅ Fato</div>
+          <p class="fact-text">75% dos transtornos mentais se desenvolvem antes dos 24 anos. Cuidar da saúde mental desde cedo é fundamental para um desenvolvimento saudável e uma vida mais equilibrada.</p>
+        </div>
+
+        <div class="myth-card full-width">
+          <div class="myth-label">💡 Como superar esses preconceitos?</div>
+          <p class="fact-text">Superar o estigma começa por entender que qualquer pessoa pode enfrentar dificuldades emocionais — assim como enfrenta problemas físicos. Falar abertamente sobre saúde mental, ouvir sem julgamento e buscar informações corretas são passos essenciais para criar uma sociedade mais empática e acolhedora.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="conteudo-aba" id="conteudo-2">
+      <div class="page-header">
+        <h2 class="page-title">Auto<em>ajuda</em></h2>
+        <p class="page-desc">Pequenas atitudes diárias fazem grande diferença no seu bem-estar emocional.</p>
+      </div>
+
+      <div class="autoajuda-grid">
+        <div class="tip-card">
+          <span class="tip-emoji">🏃</span>
+          <h4>Exercite-se</h4>
+          <p>Atividade física libera endorfinas que melhoram o humor e reduzem o estresse. Mesmo uma caminhada de 20 minutos já faz diferença.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-emoji">😴</span>
+          <h4>Durma bem</h4>
+          <p>O sono é essencial para o funcionamento do cérebro e para regular as emoções. Priorize 7 a 9 horas por noite.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-emoji">✍️</span>
+          <h4>Escreva seus sentimentos</h4>
+          <p>Colocar emoções no papel ajuda a processá-las. Mantenha um diário de gratidão ou escreva sobre o que está sentindo.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-emoji">🍃</span>
+          <h4>Pratique mindfulness</h4>
+          <p>Meditação e atenção plena reduzem a ansiedade e aumentam o foco. Comece com apenas 5 minutos por dia.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-emoji">🥗</span>
+          <h4>Cuide da alimentação</h4>
+          <p>Uma dieta equilibrada, rica em nutrientes e com boa hidratação, contribui diretamente para o equilíbrio emocional.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-emoji">💬</span>
+          <h4>Converse com alguém</h4>
+          <p>Compartilhar o que você está sentindo com uma pessoa de confiança alivia o peso emocional e fortalece vínculos.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-emoji">🎨</span>
+          <h4>Expresse-se criativamente</h4>
+          <p>Desenhar, pintar, tocar um instrumento ou escrever são formas poderosas de processar emoções e aliviar tensões internas.</p>
+        </div>
+        <div class="tip-card">
+          <span class="tip-emoji">📵</span>
+          <h4>Faça pausas digitais</h4>
+          <p>Reduzir o tempo nas redes sociais diminui comparações e ansiedade. Reserve momentos do dia para ficar longe das telas.</p>
+        </div>
+      </div>
+
+      <section class="resources-section">
+        <h3 class="section-title">📚 Leituras recomendadas</h3>
+        <div class="books-grid">
+          <div class="book-card">
+            <div class="book-cover">
+              <img src="imagens/poder.jpg" alt="O Poder do Agora">
+            </div>
+            <div class="book-info">
+              <span class="book-num">01</span>
+              <strong>"O Poder do Agora"</strong>
+              <span class="book-author">Eckhart Tolle</span>
+              <p>Clássico sobre a importância de viver no presente e lidar com a mente agitada através de práticas e reflexões.</p>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover">
+              <img src="imagens/ansiedade2.jpg" alt="Ansiedade">
+            </div>
+            <div class="book-info">
+              <span class="book-num">02</span>
+              <strong>"Ansiedade: Como Enfrentar o Mal do Século"</strong>
+              <span class="book-author">Augusto Cury</span>
+              <p>Abordagem prática sobre o impacto da ansiedade e ferramentas para controlá-la no dia a dia.</p>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover">
+              <img src="imagens/mentes.jpg" alt="Mentes Ansiosas">
+            </div>
+            <div class="book-info">
+              <span class="book-num">03</span>
+              <strong>"Mentes Ansiosas"</strong>
+              <span class="book-author">Ana Beatriz Barbosa Silva</span>
+              <p>Explicação clara sobre como a ansiedade afeta a vida e como gerenciar pensamentos de forma mais saudável.</p>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover">
+              <img src="imagens/arte.png" alt="A Arte de Ser Feliz">
+            </div>
+            <div class="book-info">
+              <span class="book-num">04</span>
+              <strong>"A Arte de Ser Feliz"</strong>
+              <span class="book-author">Arthur Schopenhauer</span>
+              <p>Reflexões filosóficas profundas sobre felicidade e equilíbrio interior para a vida cotidiana.</p>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover">
+              <img src="imagens/voce.jpg" alt="Você é Insubstituível">
+            </div>
+            <div class="book-info">
+              <span class="book-num">05</span>
+              <strong>"Você é Insubstituível"</strong>
+              <span class="book-author">Augusto Cury</span>
+              <p>Reflexão sobre a importância de reconhecer o próprio valor e lidar com adversidades de forma saudável.</p>
+            </div>
+          </div>
+          <div class="book-card">
+            <div class="book-cover">
+              <img src="imagens/coragem.png" alt="A Coragem de Ser Imperfeito">
+            </div>
+            <div class="book-info">
+              <span class="book-num">06</span>
+              <strong>"A Coragem de Ser Imperfeito"</strong>
+              <span class="book-author">Brené Brown</span>
+              <p>Aborda como a vulnerabilidade e a aceitação das próprias imperfeições são fundamentais para uma vida com mais coragem, conexão e alegria.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="resources-section">
+        <h3 class="section-title">🎬 Canais no YouTube</h3>
+        <div class="channels-list">
+          <a href="https://www.youtube.com/@AlanaAnijar" target="_blank" class="channel-card">
+            <span class="channel-icon">▶</span>
+            <div>
+              <strong>Psicologia na Prática</strong> — Alana Anijar
+              <p>Dicas sobre ansiedade, depressão, autoestima e desafios emocionais.</p>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@serfelicidade" target="_blank" class="channel-card">
+            <span class="channel-icon">▶</span>
+            <div>
+              <strong>Ser Felicidade</strong>
+              <p>Saúde mental, autocuidado, autoestima e técnicas de relaxamento.</p>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@MenteAbertaMindfulnessBrasil" target="_blank" class="channel-card">
+            <span class="channel-icon">▶</span>
+            <div>
+              <strong>Mente Aberta Mindfulness Brasil</strong>
+              <p>Práticas de mindfulness e meditação para reduzir estresse e melhorar o foco.</p>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@saudedamente1548" target="_blank" class="channel-card">
+            <span class="channel-icon">▶</span>
+            <div>
+              <strong>Saúde da Mente</strong>
+              <p>Orientação sobre desafios emocionais e promoção de uma vida equilibrada.</p>
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@VivaMelhorr" target="_blank" class="channel-card">
+            <span class="channel-icon">▶</span>
+            <div>
+              <strong>Viva Melhor</strong>
+              <p>Saúde mental e qualidade de vida com práticas acessíveis do cotidiano.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <div class="conteudo-aba" id="conteudo-3">
+      <div class="page-header">
+        <h2 class="page-title">Suporte <em>Emocional</em></h2>
+        <p class="page-desc">Ninguém precisa enfrentar dificuldades sozinho. Pedir ajuda é um ato de coragem.</p>
+      </div>
+
+      <div class="suporte-grid">
+        <div class="suporte-card">
+          <div class="suporte-icon">❤️</div>
+          <h3>Família & Amigos</h3>
+          <p>Quando nos sentimos compreendidos por pessoas próximas, nossa autoestima e confiança aumentam. Vínculos afetivos oferecem conforto e um espaço seguro para expressar sentimentos sem medo de julgamento.</p>
+        </div>
+
+        <div class="suporte-card">
+          <div class="suporte-icon">🩺</div>
+          <h3>Apoio Profissional</h3>
+          <p>Psicólogos trabalham com terapias para ajudar a entender sentimentos e comportamentos. Psiquiatras são médicos especializados em saúde mental e podem prescrever medicamentos quando necessário.</p>
+        </div>
+
+        <div class="suporte-card">
+          <div class="suporte-icon">🌐</div>
+          <h3>Serviços Online & Gratuitos</h3>
+          <p>O CAPS (Centro de Atenção Psicossocial) oferece tratamento gratuito para pessoas com transtornos mentais. ONGs e centros comunitários também oferecem apoio a baixo custo em diversas cidades.</p>
+        </div>
+      </div>
+
+      <div class="cvv-banner">
+        <div class="cvv-content">
+          <span class="cvv-icon">📞</span>
+          <div>
+            <h3>CVV — Centro de Valorização da Vida</h3>
+            <p>Apoio emocional gratuito, 24 horas por dia, 7 dias por semana. Disponível por telefone, chat e e-mail.</p>
+          </div>
+          <div class="cvv-number">188</div>
+        </div>
+      </div>
+
+      <section class="como-pedir">
+        <h3 class="section-title">💬 Como pedir apoio?</h3>
+        <div class="steps-list">
+          <div class="step">
+            <span class="step-num">1</span>
+            <div>
+              <strong>Reconheça o que você está sentindo</strong>
+              <p>Reflita sobre suas emoções. Escrever sobre elas pode ajudar a clarear o que está acontecendo internamente.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <div>
+              <strong>Escolha alguém de confiança</strong>
+              <p>Comece falando com um amigo ou familiar próximo. Um ambiente seguro facilita a abertura emocional.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <div>
+              <strong>Seja honesto e direto</strong>
+              <p>Não tenha medo de expressar o que está sentindo, mesmo que seja difícil ou confuso. A honestidade acelera o processo de cura.</p>
+            </div>
+          </div>
+          <div class="step">
+            <span class="step-num">4</span>
+            <div>
+              <strong>Procure apoio profissional se necessário</strong>
+              <p>Se os sentimentos persistirem ou afetarem sua vida, um psicólogo pode oferecer suporte especializado e direcionado.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="conteudo-aba" id="conteudo-4">
+      <div class="page-header">
+        <h2 class="page-title">Teste <em>Psicológico</em></h2>
+        <p class="page-desc">Uma ferramenta de autoavaliação para refletir sobre seus sentimentos. <strong>Não substitui avaliação profissional.</strong></p>
+      </div>
+
+      <div class="instrucoes-box">
+        <h4>📋 Como responder</h4>
+        <ul>
+          <li>Leia cada pergunta com atenção e pense nos <strong>últimos dias</strong></li>
+          <li>Escolha a opção que melhor reflete o que você tem sentido</li>
+          <li>Seja honesto consigo mesmo — não há resposta certa ou errada</li>
+        </ul>
+      </div>
+
+      <form id="test-form" class="test-form">
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="progressBar"></div>
+          <span class="progress-label" id="progressLabel">0 de 20 respondidas</span>
+        </div>
+
+        <div class="question" data-q="1">
+          <p class="q-text"><span class="q-num">01</span> Você tem se sentido triste ultimamente?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q1" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q1" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q1" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q1" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="2">
+          <p class="q-text"><span class="q-num">02</span> Tem dificuldade em se concentrar nas atividades diárias?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q2" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q2" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q2" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q2" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="3">
+          <p class="q-text"><span class="q-num">03</span> Sente cansaço ou falta de energia frequentemente?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q3" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q3" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q3" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q3" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="4">
+          <p class="q-text"><span class="q-num">04</span> Percebe que está ansioso ou preocupado na maior parte do tempo?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q4" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q4" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q4" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q4" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="5">
+          <p class="q-text"><span class="q-num">05</span> Tem dificuldade em aproveitar atividades que antes te faziam feliz?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q5" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q5" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q5" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q5" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="6">
+          <p class="q-text"><span class="q-num">06</span> Sente que seus relacionamentos sociais estão sendo prejudicados?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q6" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q6" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q6" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q6" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="7">
+          <p class="q-text"><span class="q-num">07</span> Acha difícil compartilhar seus sentimentos com outras pessoas?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q7" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q7" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q7" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q7" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="8">
+          <p class="q-text"><span class="q-num">08</span> Seu estado emocional está atrapalhando estudos ou trabalho?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q8" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q8" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q8" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q8" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="9">
+          <p class="q-text"><span class="q-num">09</span> Tem dificuldade para dormir ou não está descansando o suficiente?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q9" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q9" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q9" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q9" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="10">
+          <p class="q-text"><span class="q-num">10</span> Se sente desconectado ou isolado das pessoas ao seu redor?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q10" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q10" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q10" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q10" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="11">
+          <p class="q-text"><span class="q-num">11</span> Percebe que está comendo mais ou menos do que o habitual?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q11" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q11" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q11" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q11" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="12">
+          <p class="q-text"><span class="q-num">12</span> Sente que tem pensamentos críticos ou negativos sobre si mesmo?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q12" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q12" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q12" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q12" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="13">
+          <p class="q-text"><span class="q-num">13</span> Acredita que tem cuidado bem da sua saúde física e mental?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q13" value="1" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q13" value="2" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q13" value="3" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q13" value="4" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="14">
+          <p class="q-text"><span class="q-num">14</span> Já evitou situações ou lugares por conta do seu estado emocional?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q14" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q14" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q14" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q14" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="15">
+          <p class="q-text"><span class="q-num">15</span> Você sente que sua saúde mental tem piorado recentemente?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q15" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q15" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q15" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q15" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="16">
+          <p class="q-text"><span class="q-num">16</span> Sente que pequenas coisas do dia a dia te irritam ou frustram com facilidade?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q16" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q16" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q16" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q16" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="17">
+          <p class="q-text"><span class="q-num">17</span> Tem sentido falta de motivação para começar ou terminar tarefas?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q17" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q17" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q17" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q17" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="18">
+          <p class="q-text"><span class="q-num">18</span> Percebe que tem dificuldade em relaxar mesmo quando tem tempo livre?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q18" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q18" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q18" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q18" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="19">
+          <p class="q-text"><span class="q-num">19</span> Sente que as pessoas ao seu redor não entendem o que você está passando?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q19" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q19" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q19" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q19" value="1" onchange="updateProgress()"> <span>Não</span></label>
+          </div>
+        </div>
+
+        <div class="question" data-q="20">
+          <p class="q-text"><span class="q-num">20</span> Com que frequência você tem esperança em relação ao seu futuro?</p>
+          <div class="options">
+            <label class="option-label"><input type="radio" name="q20" value="1" onchange="updateProgress()"> <span>Sempre</span></label>
+            <label class="option-label"><input type="radio" name="q20" value="2" onchange="updateProgress()"> <span>Às vezes</span></label>
+            <label class="option-label"><input type="radio" name="q20" value="3" onchange="updateProgress()"> <span>Raramente</span></label>
+            <label class="option-label"><input type="radio" name="q20" value="4" onchange="updateProgress()"> <span>Nunca</span></label>
+          </div>
+        </div>
+
+        <button type="button" class="btn-calcular" onclick="calcularResultado()">Ver meu resultado →</button>
+      </form>
+
+      <div id="resultado" class="resultado-card" style="display:none;"></div>
+
+      <section class="referencias-section">
+        <h3 class="section-title">📎 Referências Bibliográficas</h3>
+        <div class="referencias-box">
+          <p><strong>Conteúdo geral sobre saúde mental:</strong></p>
+          <ul>
+            <li>ORGANIZAÇÃO MUNDIAL DA SAÚDE (OMS). <em>Mental health: strengthening our response.</em> Geneva: WHO, 2022. Disponível em: <span class="ref-link">who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response</span></li>
+            <li>MINISTÉRIO DA SAÚDE. <em>Saúde Mental.</em> Brasília: MS, 2023. Disponível em: <span class="ref-link">saude.gov.br</span></li>
+            <li>AMERICAN PSYCHIATRIC ASSOCIATION. <em>Diagnostic and Statistical Manual of Mental Disorders</em> (DSM-5). 5. ed. Arlington: APA, 2013.</li>
+            <li>CURY, Augusto. <em>Ansiedade: como enfrentar o mal do século.</em> São Paulo: Saraiva, 2014.</li>
+            <li>SILVA, Ana Beatriz Barbosa. <em>Mentes ansiosas: medo e ansiedade nossos de cada dia.</em> Rio de Janeiro: Objetiva, 2011.</li>
+            <li>TOLLE, Eckhart. <em>O poder do agora: um guia para a iluminação espiritual.</em> São Paulo: Sextante, 2002.</li>
+            <li>BROWN, Brené. <em>A coragem de ser imperfeito.</em> Rio de Janeiro: Sextante, 2013.</li>
+          </ul>
+          <p style="margin-top:16px;"><strong>Teste psicológico:</strong></p>
+          <ul>
+            <li>KROENKE, K.; SPITZER, R. L.; WILLIAMS, J. B. W. The PHQ-9: validity of a brief depression severity measure. <em>Journal of General Internal Medicine</em>, v. 16, p. 606–613, 2001. (Adaptado para fins educacionais.)</li>
+            <li>SPITZER, R. L. et al. A brief measure for assessing generalized anxiety disorder. <em>Archives of Internal Medicine</em>, v. 166, n. 10, p. 1092–1097, 2006. (GAD-7, adaptado para fins educacionais.)</li>
+          </ul>
+          <p class="ref-aviso">⚠️ O questionário presente neste site é uma adaptação educacional de instrumentos validados de autoavaliação em saúde mental e <strong>não substitui diagnóstico clínico</strong>.</p>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-logo">🩵 Sua Saúde Mental</div>
+      <p>EEEP Professora Luiza de Teodoro Vieira</p>
+      <p>AV. XXV, 450 — Jereissaiti II, Pacatuba — CE</p>
+      <p>Por <strong>Álex, Emilly, Gabriella G. e Lucas</strong></p>
+      <p>© 2025 Ratos da Web · Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
