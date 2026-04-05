@@ -6,39 +6,40 @@
     <title>Mente em Equilíbrio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <nav class="navbar">
     <div class="nav-logo">
       <span class="logo-icon">🩵</span>
-      <span class="logo-text">Sua Saúde Mental</span>
+      <span>Sua Saúde Mental</span>
     </div>
     <div class="nav-links">
-      <button class="nav-btn active" onclick="mostrarAba(0)" data-index="0">Início</button>
-      <button class="nav-btn" onclick="mostrarAba(1)" data-index="1">Mitos & Fatos</button>
-      <button class="nav-btn" onclick="mostrarAba(2)" data-index="2">Autoajuda</button>
-      <button class="nav-btn" onclick="mostrarAba(3)" data-index="3">Suporte</button>
-      <button class="nav-btn" onclick="mostrarAba(4)" data-index="4">Teste</button>
+      <button class="nav-btn active" onclick="mostrarAba(0)" data-secao="0">Início</button>
+      <button class="nav-btn" onclick="mostrarAba(1)" data-secao="1">Mitos & Fatos</button>
+      <button class="nav-btn" onclick="mostrarAba(2)" data-secao="2">Autoajuda</button>
+      <button class="nav-btn" onclick="mostrarAba(3)" data-secao="3">Suporte</button>
+      <button class="nav-btn" onclick="mostrarAba(4)" data-secao="4">Teste</button>
     </div>
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+    <button class="hamburger" id="hamburger" onclick="abrirMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </nav>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <button onclick="mostrarAba(0);toggleMenu()" data-index="0">Início</button>
-    <button onclick="mostrarAba(1);toggleMenu()" data-index="1">Mitos & Fatos</button>
-    <button onclick="mostrarAba(2);toggleMenu()" data-index="2">Autoajuda</button>
-    <button onclick="mostrarAba(3);toggleMenu()" data-index="3">Suporte</button>
-    <button onclick="mostrarAba(4);toggleMenu()" data-index="4">Teste</button>
+  <div class="mobile-menu" id="menuMobile">
+    <button onclick="mostrarAba(0); fecharMenu()">Início</button>
+    <button onclick="mostrarAba(1); fecharMenu()">Mitos & Fatos</button>
+    <button onclick="mostrarAba(2); fecharMenu()">Autoajuda</button>
+    <button onclick="mostrarAba(3); fecharMenu()">Suporte</button>
+    <button onclick="mostrarAba(4); fecharMenu()">Teste</button>
   </div>
 
   <main class="main-content">
 
-    <div class="conteudo-aba active" id="conteudo-0">
-      <section class="hero">
+    <section id="secao-0">
+      <div class="hero">
         <div class="hero-badge">Saúde Mental</div>
         <h1 class="hero-title">Cuidar da mente<br><em>é cuidar da vida.</em></h1>
         <p class="hero-sub">Um espaço acolhedor para entender, refletir e agir sobre seu bem-estar emocional.</p>
@@ -46,9 +47,9 @@
           <button class="btn-primary" onclick="mostrarAba(4)">Fazer o teste →</button>
           <button class="btn-ghost" onclick="mostrarAba(2)">Como me cuidar</button>
         </div>
-      </section>
+      </div>
 
-      <section class="cards-grid">
+      <div class="cards-grid">
         <div class="info-card card-blue">
           <div class="card-icon">💭</div>
           <h3>O que é saúde mental?</h3>
@@ -69,9 +70,9 @@
           <h3>Mente e corpo unidos</h3>
           <p>A conexão entre mente e corpo é real. Estresse emocional pode causar dores físicas, insônia e palpitações. Pessoas com boa saúde mental se recuperam mais rápido de doenças e vivem com mais qualidade.</p>
         </div>
-      </section>
+      </div>
 
-      <section class="stats-bar">
+      <div class="stats-bar">
         <div class="stat">
           <span class="stat-num">1 em 4</span>
           <span class="stat-label">pessoas enfrenta algum transtorno mental na vida</span>
@@ -86,10 +87,10 @@
           <span class="stat-num">75%</span>
           <span class="stat-label">dos transtornos mentais começam antes dos 24 anos</span>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <div class="conteudo-aba" id="conteudo-1">
+    <section id="secao-1" style="display: none;">
       <div class="page-header">
         <h2 class="page-title">Mitos & <em>Fatos</em></h2>
         <p class="page-desc">A saúde mental ainda carrega muito estigma. Conhecer a verdade é o primeiro passo para combatê-lo.</p>
@@ -164,9 +165,9 @@
           <p class="fact-text">Superar o estigma começa por entender que qualquer pessoa pode enfrentar dificuldades emocionais — assim como enfrenta problemas físicos. Falar abertamente sobre saúde mental, ouvir sem julgamento e buscar informações corretas são passos essenciais para criar uma sociedade mais empática e acolhedora.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="conteudo-aba" id="conteudo-2">
+    <section id="secao-2" style="display: none;">
       <div class="page-header">
         <h2 class="page-title">Auto<em>ajuda</em></h2>
         <p class="page-desc">Pequenas atitudes diárias fazem grande diferença no seu bem-estar emocional.</p>
@@ -215,7 +216,7 @@
         </div>
       </div>
 
-      <section class="resources-section">
+      <div class="resources-section">
         <h3 class="section-title">📚 Leituras recomendadas</h3>
         <div class="books-grid">
           <div class="book-card">
@@ -224,7 +225,7 @@
             </div>
             <div class="book-info">
               <span class="book-num">01</span>
-              <strong>"O Poder do Agora"</strong>
+              <strong>O Poder do Agora</strong>
               <span class="book-author">Eckhart Tolle</span>
               <p>Clássico sobre a importância de viver no presente e lidar com a mente agitada através de práticas e reflexões.</p>
             </div>
@@ -235,7 +236,7 @@
             </div>
             <div class="book-info">
               <span class="book-num">02</span>
-              <strong>"Ansiedade: Como Enfrentar o Mal do Século"</strong>
+              <strong>Ansiedade: Como Enfrentar o Mal do Século</strong>
               <span class="book-author">Augusto Cury</span>
               <p>Abordagem prática sobre o impacto da ansiedade e ferramentas para controlá-la no dia a dia.</p>
             </div>
@@ -246,7 +247,7 @@
             </div>
             <div class="book-info">
               <span class="book-num">03</span>
-              <strong>"Mentes Ansiosas"</strong>
+              <strong>Mentes Ansiosas</strong>
               <span class="book-author">Ana Beatriz Barbosa Silva</span>
               <p>Explicação clara sobre como a ansiedade afeta a vida e como gerenciar pensamentos de forma mais saudável.</p>
             </div>
@@ -257,7 +258,7 @@
             </div>
             <div class="book-info">
               <span class="book-num">04</span>
-              <strong>"A Arte de Ser Feliz"</strong>
+              <strong>A Arte de Ser Feliz</strong>
               <span class="book-author">Arthur Schopenhauer</span>
               <p>Reflexões filosóficas profundas sobre felicidade e equilíbrio interior para a vida cotidiana.</p>
             </div>
@@ -268,7 +269,7 @@
             </div>
             <div class="book-info">
               <span class="book-num">05</span>
-              <strong>"Você é Insubstituível"</strong>
+              <strong>Você é Insubstituível</strong>
               <span class="book-author">Augusto Cury</span>
               <p>Reflexão sobre a importância de reconhecer o próprio valor e lidar com adversidades de forma saudável.</p>
             </div>
@@ -279,15 +280,15 @@
             </div>
             <div class="book-info">
               <span class="book-num">06</span>
-              <strong>"A Coragem de Ser Imperfeito"</strong>
+              <strong>A Coragem de Ser Imperfeito</strong>
               <span class="book-author">Brené Brown</span>
               <p>Aborda como a vulnerabilidade e a aceitação das próprias imperfeições são fundamentais para uma vida com mais coragem, conexão e alegria.</p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section class="resources-section">
+      <div class="resources-section">
         <h3 class="section-title">🎬 Canais no YouTube</h3>
         <div class="channels-list">
           <a href="https://www.youtube.com/@AlanaAnijar" target="_blank" class="channel-card">
@@ -326,10 +327,10 @@
             </div>
           </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <div class="conteudo-aba" id="conteudo-3">
+    <section id="secao-3" style="display: none;">
       <div class="page-header">
         <h2 class="page-title">Suporte <em>Emocional</em></h2>
         <p class="page-desc">Ninguém precisa enfrentar dificuldades sozinho. Pedir ajuda é um ato de coragem.</p>
@@ -366,7 +367,7 @@
         </div>
       </div>
 
-      <section class="como-pedir">
+      <div class="como-pedir">
         <h3 class="section-title">💬 Como pedir apoio?</h3>
         <div class="steps-list">
           <div class="step">
@@ -398,10 +399,10 @@
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <div class="conteudo-aba" id="conteudo-4">
+    <section id="secao-4" style="display: none;">
       <div class="page-header">
         <h2 class="page-title">Teste <em>Psicológico</em></h2>
         <p class="page-desc">Uma ferramenta de autoavaliação para refletir sobre seus sentimentos. <strong>Não substitui avaliação profissional.</strong></p>
@@ -416,239 +417,239 @@
         </ul>
       </div>
 
-      <form id="test-form" class="test-form">
+      <form class="test-form">
         <div class="progress-bar-container">
           <div class="progress-bar" id="progressBar"></div>
           <span class="progress-label" id="progressLabel">0 de 20 respondidas</span>
         </div>
 
-        <div class="question" data-q="1">
+        <div class="question">
           <p class="q-text"><span class="q-num">01</span> Você tem se sentido triste ultimamente?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q1" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q1" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q1" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q1" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q1" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q1" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q1" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q1" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="2">
+        <div class="question">
           <p class="q-text"><span class="q-num">02</span> Tem dificuldade em se concentrar nas atividades diárias?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q2" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q2" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q2" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q2" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q2" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q2" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q2" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q2" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="3">
+        <div class="question">
           <p class="q-text"><span class="q-num">03</span> Sente cansaço ou falta de energia frequentemente?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q3" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q3" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q3" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q3" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q3" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q3" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q3" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q3" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="4">
+        <div class="question">
           <p class="q-text"><span class="q-num">04</span> Percebe que está ansioso ou preocupado na maior parte do tempo?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q4" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q4" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q4" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q4" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q4" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q4" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q4" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q4" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="5">
+        <div class="question">
           <p class="q-text"><span class="q-num">05</span> Tem dificuldade em aproveitar atividades que antes te faziam feliz?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q5" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q5" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q5" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q5" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q5" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q5" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q5" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q5" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="6">
+        <div class="question">
           <p class="q-text"><span class="q-num">06</span> Sente que seus relacionamentos sociais estão sendo prejudicados?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q6" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q6" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q6" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q6" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q6" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q6" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q6" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q6" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="7">
+        <div class="question">
           <p class="q-text"><span class="q-num">07</span> Acha difícil compartilhar seus sentimentos com outras pessoas?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q7" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q7" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q7" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q7" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q7" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q7" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q7" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q7" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="8">
+        <div class="question">
           <p class="q-text"><span class="q-num">08</span> Seu estado emocional está atrapalhando estudos ou trabalho?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q8" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q8" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q8" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q8" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q8" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q8" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q8" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q8" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="9">
+        <div class="question">
           <p class="q-text"><span class="q-num">09</span> Tem dificuldade para dormir ou não está descansando o suficiente?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q9" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q9" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q9" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q9" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q9" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q9" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q9" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q9" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="10">
+        <div class="question">
           <p class="q-text"><span class="q-num">10</span> Se sente desconectado ou isolado das pessoas ao seu redor?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q10" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q10" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q10" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q10" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q10" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q10" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q10" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q10" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="11">
+        <div class="question">
           <p class="q-text"><span class="q-num">11</span> Percebe que está comendo mais ou menos do que o habitual?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q11" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q11" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q11" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q11" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q11" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q11" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q11" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q11" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="12">
+        <div class="question">
           <p class="q-text"><span class="q-num">12</span> Sente que tem pensamentos críticos ou negativos sobre si mesmo?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q12" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q12" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q12" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q12" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q12" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q12" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q12" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q12" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="13">
+        <div class="question">
           <p class="q-text"><span class="q-num">13</span> Acredita que tem cuidado bem da sua saúde física e mental?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q13" value="1" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q13" value="2" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q13" value="3" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q13" value="4" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q13" value="1" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q13" value="2" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q13" value="3" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q13" value="4" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="14">
+        <div class="question">
           <p class="q-text"><span class="q-num">14</span> Já evitou situações ou lugares por conta do seu estado emocional?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q14" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q14" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q14" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q14" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q14" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q14" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q14" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q14" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="15">
+        <div class="question">
           <p class="q-text"><span class="q-num">15</span> Você sente que sua saúde mental tem piorado recentemente?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q15" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q15" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q15" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q15" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q15" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q15" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q15" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q15" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="16">
+        <div class="question">
           <p class="q-text"><span class="q-num">16</span> Sente que pequenas coisas do dia a dia te irritam ou frustram com facilidade?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q16" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q16" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q16" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q16" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q16" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q16" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q16" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q16" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="17">
+        <div class="question">
           <p class="q-text"><span class="q-num">17</span> Tem sentido falta de motivação para começar ou terminar tarefas?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q17" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q17" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q17" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q17" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q17" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q17" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q17" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q17" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="18">
+        <div class="question">
           <p class="q-text"><span class="q-num">18</span> Percebe que tem dificuldade em relaxar mesmo quando tem tempo livre?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q18" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q18" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q18" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q18" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q18" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q18" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q18" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q18" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="19">
+        <div class="question">
           <p class="q-text"><span class="q-num">19</span> Sente que as pessoas ao seu redor não entendem o que você está passando?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q19" value="4" onchange="updateProgress()"> <span>Bastante</span></label>
-            <label class="option-label"><input type="radio" name="q19" value="3" onchange="updateProgress()"> <span>Um pouco</span></label>
-            <label class="option-label"><input type="radio" name="q19" value="2" onchange="updateProgress()"> <span>Mais ou menos</span></label>
-            <label class="option-label"><input type="radio" name="q19" value="1" onchange="updateProgress()"> <span>Não</span></label>
+            <label class="option-label"><input type="radio" name="q19" value="4" onchange="atualizarProgresso()"> <span>Bastante</span></label>
+            <label class="option-label"><input type="radio" name="q19" value="3" onchange="atualizarProgresso()"> <span>Um pouco</span></label>
+            <label class="option-label"><input type="radio" name="q19" value="2" onchange="atualizarProgresso()"> <span>Mais ou menos</span></label>
+            <label class="option-label"><input type="radio" name="q19" value="1" onchange="atualizarProgresso()"> <span>Não</span></label>
           </div>
         </div>
 
-        <div class="question" data-q="20">
+        <div class="question">
           <p class="q-text"><span class="q-num">20</span> Com que frequência você tem esperança em relação ao seu futuro?</p>
           <div class="options">
-            <label class="option-label"><input type="radio" name="q20" value="1" onchange="updateProgress()"> <span>Sempre</span></label>
-            <label class="option-label"><input type="radio" name="q20" value="2" onchange="updateProgress()"> <span>Às vezes</span></label>
-            <label class="option-label"><input type="radio" name="q20" value="3" onchange="updateProgress()"> <span>Raramente</span></label>
-            <label class="option-label"><input type="radio" name="q20" value="4" onchange="updateProgress()"> <span>Nunca</span></label>
+            <label class="option-label"><input type="radio" name="q20" value="1" onchange="atualizarProgresso()"> <span>Sempre</span></label>
+            <label class="option-label"><input type="radio" name="q20" value="2" onchange="atualizarProgresso()"> <span>Às vezes</span></label>
+            <label class="option-label"><input type="radio" name="q20" value="3" onchange="atualizarProgresso()"> <span>Raramente</span></label>
+            <label class="option-label"><input type="radio" name="q20" value="4" onchange="atualizarProgresso()"> <span>Nunca</span></label>
           </div>
         </div>
 
         <button type="button" class="btn-calcular" onclick="calcularResultado()">Ver meu resultado →</button>
       </form>
 
-      <div id="resultado" class="resultado-card" style="display:none;"></div>
+      <div id="resultado" class="resultado-card" style="display: none;"></div>
 
-      <section class="referencias-section">
+      <div class="referencias-section">
         <h3 class="section-title">📎 Referências Bibliográficas</h3>
         <div class="referencias-box">
           <p><strong>Conteúdo geral sobre saúde mental:</strong></p>
           <ul>
-            <li>ORGANIZAÇÃO MUNDIAL DA SAÚDE (OMS). <em>Mental health: strengthening our response.</em> Geneva: WHO, 2022. Disponível em: <span class="ref-link">who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response</span></li>
-            <li>MINISTÉRIO DA SAÚDE. <em>Saúde Mental.</em> Brasília: MS, 2023. Disponível em: <span class="ref-link">saude.gov.br</span></li>
-            <li>AMERICAN PSYCHIATRIC ASSOCIATION. <em>Diagnostic and Statistical Manual of Mental Disorders</em> (DSM-5). 5. ed. Arlington: APA, 2013.</li>
-            <li>CURY, Augusto. <em>Ansiedade: como enfrentar o mal do século.</em> São Paulo: Saraiva, 2014.</li>
-            <li>SILVA, Ana Beatriz Barbosa. <em>Mentes ansiosas: medo e ansiedade nossos de cada dia.</em> Rio de Janeiro: Objetiva, 2011.</li>
-            <li>TOLLE, Eckhart. <em>O poder do agora: um guia para a iluminação espiritual.</em> São Paulo: Sextante, 2002.</li>
-            <li>BROWN, Brené. <em>A coragem de ser imperfeito.</em> Rio de Janeiro: Sextante, 2013.</li>
+            <li>ORGANIZAÇÃO MUNDIAL DA SAÚDE (OMS). Mental health: strengthening our response. Geneva: WHO, 2022. Disponível em: who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response</li>
+            <li>MINISTÉRIO DA SAÚDE. Saúde Mental. Brasília: MS, 2023. Disponível em: saude.gov.br</li>
+            <li>AMERICAN PSYCHIATRIC ASSOCIATION. Diagnostic and Statistical Manual of Mental Disorders (DSM-5). 5. ed. Arlington: APA, 2013.</li>
+            <li>CURY, Augusto. Ansiedade: como enfrentar o mal do século. São Paulo: Saraiva, 2014.</li>
+            <li>SILVA, Ana Beatriz Barbosa. Mentes ansiosas: medo e ansiedade nossos de cada dia. Rio de Janeiro: Objetiva, 2011.</li>
+            <li>TOLLE, Eckhart. O poder do agora: um guia para a iluminação espiritual. São Paulo: Sextante, 2002.</li>
+            <li>BROWN, Brené. A coragem de ser imperfeito. Rio de Janeiro: Sextante, 2013.</li>
           </ul>
-          <p style="margin-top:16px;"><strong>Teste psicológico:</strong></p>
+          <p style="margin-top: 16px;"><strong>Teste psicológico:</strong></p>
           <ul>
-            <li>KROENKE, K.; SPITZER, R. L.; WILLIAMS, J. B. W. The PHQ-9: validity of a brief depression severity measure. <em>Journal of General Internal Medicine</em>, v. 16, p. 606–613, 2001. (Adaptado para fins educacionais.)</li>
-            <li>SPITZER, R. L. et al. A brief measure for assessing generalized anxiety disorder. <em>Archives of Internal Medicine</em>, v. 166, n. 10, p. 1092–1097, 2006. (GAD-7, adaptado para fins educacionais.)</li>
+            <li>KROENKE, K.; SPITZER, R. L.; WILLIAMS, J. B. W. The PHQ-9: validity of a brief depression severity measure. Journal of General Internal Medicine, v. 16, p. 606–613, 2001. (Adaptado para fins educacionais.)</li>
+            <li>SPITZER, R. L. et al. A brief measure for assessing generalized anxiety disorder. Archives of Internal Medicine, v. 166, n. 10, p. 1092–1097, 2006. (GAD-7, adaptado para fins educacionais.)</li>
           </ul>
-          <p class="ref-aviso">⚠️ O questionário presente neste site é uma adaptação educacional de instrumentos validados de autoavaliação em saúde mental e <strong>não substitui diagnóstico clínico</strong>.</p>
+          <p class="ref-aviso">⚠️ O questionário presente neste site é uma adaptação educacional de instrumentos validados de autoavaliação em saúde mental e não substitui diagnóstico clínico.</p>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
   </main>
 
